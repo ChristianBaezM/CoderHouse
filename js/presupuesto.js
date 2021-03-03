@@ -155,18 +155,30 @@ $(".addition").click(function() {
     $(".adds1").slideToggle(2000);
 });
 
+function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+    return pattern.test(emailAddress);
+};
+
 function sendEmail() {
-    let Email = $("#inp").val();
-    $(".modal-body").html('El presupuesto fue enviado exitosamente al correo ' + Email);
-    $(".modal-body").prepend("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-    $(".modal-body").prepend('<img src="https://img.icons8.com/dusk/64/000000/send-mass-email.png"/>');
-    $("#myModal2").click();
-    $("#inp").attr('disabled', 'disabled');
-    $(".sendMail").prop('disabled', true);
-    $(".sendBudget").prop('disabled', true);
-    $(".sendMail").css('opacity', '0.2');
-    $(".sendBudget").css('opacity', '0.2');
-}; 
+    let emailValidation = $(".email").val();
+    if (emailValidation !== '' || emailValidation === '') {
+        if (!isValidEmailAddress(emailValidation)) {
+            $("#myModal1").click();
+        } else {
+            let email = $("#inp").val();
+            $(".modal-body").html('El presupuesto fue enviado exitosamente al correo ' + email);
+            $(".modal-body").prepend("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+            $(".modal-body").prepend('<img src="https://img.icons8.com/dusk/64/000000/send-mass-email.png"/>');
+            $("#myModal2").click();
+            $("#inp").attr('disabled', 'disabled');
+            $(".sendMail").prop('disabled', true);
+            $(".sendBudget").prop('disabled', true);
+            $(".sendMail").css('opacity', '0.2');
+            $(".sendBudget").css('opacity', '0.2');
+        }   
+    }
+};
 
 $(".sendBudget").click(function() {
     $(".email").fadeIn(5000);
