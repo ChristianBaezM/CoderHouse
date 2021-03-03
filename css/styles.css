@@ -273,6 +273,147 @@ main form .messageBody {
       background-color: transparent;
       border: none; }
 
+main .borderLine {
+  margin: auto 4%;
+  border: 1px solid gray;
+  border-radius: 10%;
+  padding-bottom: 3%; }
+  main .borderLine .mainBudget {
+    display: flex;
+    justify-content: space-around; }
+    main .borderLine .mainBudget .phases ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-left: 0; }
+      main .borderLine .mainBudget .phases ul li {
+        width: 210px;
+        margin: 4%; }
+    main .borderLine .mainBudget .times {
+      display: flex;
+      flex-direction: column; }
+      main .borderLine .mainBudget .times input {
+        width: 75px;
+        margin: 5%;
+        border-radius: 10%; }
+      main .borderLine .mainBudget .times label.total {
+        text-align: center;
+        width: 70px;
+        margin: 10%; }
+    main .borderLine .mainBudget .groupValues {
+      display: flex;
+      flex-direction: column; }
+      main .borderLine .mainBudget .groupValues label {
+        text-align: center;
+        width: 165px;
+        margin: 4%; }
+  main .borderLine .additions {
+    display: flex;
+    justify-content: center; }
+    main .borderLine .additions .addition {
+      border-radius: 4px;
+      background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
+      padding: 10px;
+      width: 150px;
+      transition: all 0.4s;
+      cursor: pointer;
+      margin: 5px; }
+      main .borderLine .additions .addition span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.4s; }
+      main .borderLine .additions .addition span::after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s; }
+    main .borderLine .additions .addition:hover span {
+      padding-right: 25px; }
+    main .borderLine .additions .addition:hover span::after {
+      opacity: 1;
+      right: 0; }
+  main .borderLine .adds1 {
+    display: none; }
+    main .borderLine .adds1 .adds {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 3%; }
+      main .borderLine .adds1 .adds .heading ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding-left: 0; }
+        main .borderLine .adds1 .adds .heading ul li {
+          width: 210px;
+          margin: 5%; }
+      main .borderLine .adds1 .adds .groupValues {
+        display: flex;
+        flex-direction: column; }
+        main .borderLine .adds1 .adds .groupValues input {
+          width: 150px;
+          margin: 4.5%;
+          border-radius: 10%;
+          margin-left: 20px; }
+        main .borderLine .adds1 .adds .groupValues label {
+          text-align: center;
+          width: 165px;
+          margin: 2.5%; }
+  main .borderLine .sender1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%; }
+    main .borderLine .sender1 .email {
+      display: none;
+      width: 400px;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 1%;
+      border-radius: 10%; }
+  main .borderLine .sender2 {
+    display: flex;
+    justify-content: center; }
+    main .borderLine .sender2 .sendMail {
+      display: none; }
+    main .borderLine .sender2 .sendBudget, main .borderLine .sender2 .sendMail {
+      border-radius: 4px;
+      background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
+      padding: 10px;
+      width: 250px;
+      transition: all 0.4s;
+      cursor: pointer;
+      margin: 5px; }
+      main .borderLine .sender2 .sendBudget span, main .borderLine .sender2 .sendMail span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.4s; }
+      main .borderLine .sender2 .sendBudget span::after, main .borderLine .sender2 .sendMail span::after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s; }
+    main .borderLine .sender2 .sendBudget:hover span, main .borderLine .sender2 .sendMail:hover span {
+      padding-right: 25px; }
+    main .borderLine .sender2 .sendBudget:hover span::after, main .borderLine .sender2 .sendMail:hover span::after {
+      opacity: 1;
+      right: 0; }
+
 @keyframes picEffect {
   from {
     opacity: 0;
